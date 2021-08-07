@@ -1,6 +1,7 @@
 package org.techtown.mission20;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -59,7 +60,9 @@ public class MainActivity extends AppCompatActivity {
         adapter.setOnItemClickListener(new OnRSSNewsItemClickListener() {
             @Override
             public void onItemClick(RSSNewsAdapter.ViewHolder holder, View view, int position) {
-                Toast.makeText(getApplicationContext(),"haha",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(getApplicationContext(), DescriptionActivity.class);
+                intent.putExtra("Des", adapter.getItem(position).getDescription());
+                startActivityForResult(intent,101);
             }
         });
         recyclerView.setAdapter(adapter);
