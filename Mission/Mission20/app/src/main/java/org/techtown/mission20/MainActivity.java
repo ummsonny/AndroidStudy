@@ -1,5 +1,5 @@
 package org.techtown.mission20;
-
+//다운받았다
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.res.Resources;
